@@ -12,6 +12,11 @@ import { Component } from '@angular/core';
         </ul>
         <img src="{{ imageUrl }}" /> 
         <img [src]="imageUrl" />
+        <table>
+            <tr>
+                <td [attr.colspan]="colSpan"></td>
+            </tr>
+        </table>
     `
 })
 
@@ -22,5 +27,6 @@ export class CoursesComponent {
                    "course2",
                    "course3"
                 ];
+        colSpan = 2;
         imageUrl = "https://homepages.cae.wisc.edu/~ece533/images/airplane.png";
     }
