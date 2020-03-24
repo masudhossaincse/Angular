@@ -4,27 +4,16 @@ import { Component } from '@angular/core';
     selector: 'courses',
     template: `
         <h2>{{ title }}</h2>
-        <h2 [textContent]="title"></h2>
-        <div (click)="onDivClicked()">
-            
-            <button (click)="onSave($event)">
-                Testing
-            </button>
-        </div>
+        <input (keyup.enter)="onKeyUp()" />   
 
     `
 })
 
 export class CoursesComponent {
-        title = "List of Course ";
-        onDivClicked() {
-            console.log("Div was cliked");
-        }
-        onSave($event) {
-            $event.stopPropagation();
-
-            console.log("Button was clicked", $event);
-        }
+    title = "List of Course ";
+       onKeyUp() {
+         console.log("Enter Was pressed");
+       }
 
 
 
