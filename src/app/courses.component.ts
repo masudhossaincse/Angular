@@ -5,36 +5,27 @@ import { Component } from '@angular/core';
     template: `
         <h2>{{ title }}</h2>
         <h2 [textContent]="title"></h2>
-        <ul>
-            <li *ngFor="let course of courses">
-                {{ course }}
-            </li>
-        </ul>
-        <img src="{{ imageUrl }}" /> 
-        <img [src]="imageUrl" />
-        <table>
-            <tr>
-                <td [attr.colspan]="colSpan"></td>
-            </tr>
-        </table>
-        <button class="btn btn-primary" [class.active]="isActive">
-            Testing
-        </button>
-        <button [style.backgroundColor]="isActive ? 'blue' : 'green'">
-            Testing
-        </button>
+        <div (click)="onDivClicked()">
+            
+            <button (click)="onSave($event)">
+                Testing
+            </button>
+        </div>
 
     `
 })
 
 export class CoursesComponent {
         title = "List of Course ";
-        courses = [
-                   "course1",
-                   "course2",
-                   "course3"
-                ];
-        colSpan = 2;
-        imageUrl = "https://homepages.cae.wisc.edu/~ece533/images/airplane.png";
-        isActive = false;
+        onDivClicked() {
+            console.log("Div was cliked");
+        }
+        onSave($event) {
+            $event.stopPropagation();
+
+            console.log("Button was clicked", $event);
+        }
+
+
+
     }
