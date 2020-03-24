@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
                 <td [attr.colspan]="colSpan"></td>
             </tr>
         </table>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" [class.active]="isActive">
             Testing
         </button>
     `
@@ -32,4 +32,5 @@ export class CoursesComponent {
                 ];
         colSpan = 2;
         imageUrl = "https://homepages.cae.wisc.edu/~ece533/images/airplane.png";
+        isActive = false;
     }
