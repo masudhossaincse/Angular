@@ -20,6 +20,10 @@ import { Component } from '@angular/core';
         <button class="btn btn-primary" [class.active]="isActive">
             Testing
         </button>
+        <button [style.backgroundColor]="isActive ? 'blue' : 'green'">
+            Testing
+        </button>
+
     `
 })
 
