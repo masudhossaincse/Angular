@@ -4,15 +4,15 @@ import { Component } from '@angular/core';
     selector: 'courses',
     template: `
         <h2>{{ title }}</h2>
-        <input (keyup.enter)="onKeyUp()" />   
+        <input #email (keyup.enter)="onKeyUp(email.value)" />   
 
     `
 })
 
 export class CoursesComponent {
     title = "List of Course ";
-       onKeyUp() {
-         console.log("Enter Was pressed");
+       onKeyUp(email) {
+         console.log(email);
        }
 
 
